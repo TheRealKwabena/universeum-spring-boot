@@ -3,6 +3,7 @@ package com.example.university.model;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity(name = "Course")
 @Table(
@@ -55,6 +56,17 @@ public class Course {
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
 
     private List<Teacher> teacherList;
+
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    private Set<StudentCourse> studentCourseSet;
+
+    public Set<StudentCourse> getStudentCourseSet() {
+        return studentCourseSet;
+    }
+
+    public void setStudentCourseSet(Set<StudentCourse> studentCourseSet) {
+        this.studentCourseSet = studentCourseSet;
+    }
 
     public Course() {
     }

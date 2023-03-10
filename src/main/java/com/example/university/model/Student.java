@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Set;
 
 @Entity(name = "Student")
 @Table(name = "student",
@@ -56,8 +57,18 @@ public class Student {
 
     )
     private LocalDate dob;
+    @OneToMany(mappedBy = "student")
+    private Set<StudentCourse> studentCourseSet;
     @Transient
     private Integer age;
+
+    public Set<StudentCourse> getStudentCourseSet() {
+        return studentCourseSet;
+    }
+
+    public void setStudentCourseSet(Set<StudentCourse> studentCourseSet) {
+        this.studentCourseSet = studentCourseSet;
+    }
 
     public Student() {
     }
