@@ -35,5 +35,26 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
 
     }
+    @GetMapping("/courses/{id}")
+
+    ResponseEntity<?> getSpecificCourse(@PathVariable Long id) {
+        try {
+            Course course = this.courseService.getCourseById(id);
+            if(course == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+
+            return ResponseEntity.ok(course);
+
+        } catch(IllegalStateException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+    @DeleteMapping("/courses/{id}")
+
+    ResponseEntity<?> deleteCourseById(@PathVariable Long id) {
+        this.courseService.deleteCourseById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 
 }

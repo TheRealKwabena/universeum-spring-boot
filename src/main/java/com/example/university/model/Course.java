@@ -16,6 +16,7 @@ import java.util.Set;
         }
 )
 public class Course {
+    private static final String EOL = System.lineSeparator();
     @Id
     @SequenceGenerator(
             name = "course_sequence",
@@ -118,7 +119,10 @@ public class Course {
         return teacherList;
     }
 
-
+    public String toString() {
+        return "Course name: " + this.courseName + EOL + "Course language: " + this.courseLanguage +
+                EOL + "Course Code: " + this.courseCode;
+    }
 
     public void setTeacherList(List<Teacher> teacherList) {
         this.teacherList = teacherList;
