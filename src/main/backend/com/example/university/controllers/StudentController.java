@@ -52,7 +52,7 @@ public class StudentController {
 
     ResponseEntity<?> deleteStudentById(@PathVariable Long id) {
         this.studentService.deleteStudentById(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Student with id  " + id + " does not exist");
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Student with id  " + id + " has been deleted");
     }
     @DeleteMapping("/students")
 

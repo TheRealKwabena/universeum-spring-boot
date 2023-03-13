@@ -62,6 +62,11 @@ public class Teacher {
         this.email = email;
         this.fullName = fullName;
     }
+    public Teacher(String faculty, String email, String fullName) {
+        this.faculty = faculty;
+        this.email = email;
+        this.fullName = fullName;
+    }
 
     public Teacher() {
     }
