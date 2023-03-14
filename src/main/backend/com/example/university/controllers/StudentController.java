@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/v1")
+@CrossOrigin
 public class StudentController {
     private final StudentService studentService;
     @Autowired
@@ -35,7 +36,7 @@ public class StudentController {
     @GetMapping("/students/{id}")
 
     ResponseEntity<?> getSpecificStudent(@PathVariable Long id) {
-        try {
+
             Student student = this.studentService.getStudentById(id);
             if(student == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student with id " + id + " does not exist");
@@ -43,16 +44,14 @@ public class StudentController {
 
             return ResponseEntity.ok(student);
 
-        } catch(IllegalStateException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+
     }
 
     @DeleteMapping("/students/{id}")
 
     ResponseEntity<?> deleteStudentById(@PathVariable Long id) {
         this.studentService.deleteStudentById(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Student with id  " + id + " has been deleted");
+        return ResponseEntity.status(HttpStatus.OK).body("Student with id  " + id + " has been deleted");
     }
     @DeleteMapping("/students")
 

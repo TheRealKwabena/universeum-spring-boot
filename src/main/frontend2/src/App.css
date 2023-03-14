@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card-container{
+    display: flex;
+    max-width: 100%;
+    margin-top: 20px;
+   
+   
+   
+    align-items: space-between;
+    flex-wrap: wrap;
+    height: fit-content;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.2);
+
+
+}
+a {
+    text-decoration: none;
+}
+.card {
+    margin: 20px 20px
+}
+
+.button {
+    text-decoration: none;
+}
+.input-form{
+    display: flex;
+    
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    height:60vh;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 1px 3px #888888;
+    flex-direction: column;
+
+}
+.header {
+    font-weight: 900;
+    font-family: 'Open Sans', sans-serif;
+    color: #eb5834;
+    text-align: center;
+}
+.input-form .input {
+    margin-top: 30px;
+    margin-bottom:  30px;
+    width: 500px;
+    height: 30px
+}
+#label-date {
+    margin-left: -10px
+}
+.create-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 500px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: medium;
+    cursor: pointer;
+    
+
+
+}
+.create-button:hover {
+    background-color: #4287f5;
+    color: #FFFFFF;
+    
+}

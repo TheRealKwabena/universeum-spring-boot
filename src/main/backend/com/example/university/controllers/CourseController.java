@@ -13,6 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping(path = "/api/v1")
+@CrossOrigin
 public class CourseController {
 
     private final CourseService courseService;

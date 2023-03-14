@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class TeacherConfiguration {
+    /*
     private static final Logger log = LoggerFactory.getLogger(CourseConfiguration.class);
 
     @Bean
@@ -26,4 +27,6 @@ public class TeacherConfiguration {
 
         };
     }
+    */
+
 }
