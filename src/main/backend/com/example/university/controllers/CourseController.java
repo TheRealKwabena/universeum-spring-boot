@@ -32,8 +32,12 @@ public class CourseController {
 
     @PostMapping("/courses")
     ResponseEntity<?> createCourse(@RequestBody Course course) {
-        this.courseService.createCourse(course);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        String result =  this.courseService.createCourse(course);
+        if(result.equals("Course code already exists")) {
+            return ResponseEntity.status(HttpStatus.OK).body(result);
+        }
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(course);
 
     }
     @GetMapping("/courses/{id}")

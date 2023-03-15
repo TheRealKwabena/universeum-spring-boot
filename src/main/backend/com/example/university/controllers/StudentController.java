@@ -29,7 +29,10 @@ public class StudentController {
 
     @PostMapping("/students")
     ResponseEntity<?> createStudent(@RequestBody Student student) {
-        this.studentService.createStudent(student);
+        String result = this.studentService.createStudent(student);
+        if(result.equals("Email already taken")) {
+            return ResponseEntity.status(HttpStatus.OK).body("Email already taken");
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(student);
 
     }

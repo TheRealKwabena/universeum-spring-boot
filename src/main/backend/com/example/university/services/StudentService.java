@@ -4,6 +4,7 @@ import com.example.university.model.Course;
 import com.example.university.model.Student;
 import com.example.university.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,8 +30,19 @@ public class StudentService {
         }
         return student;
     }
-    public void createStudent(Student student) {
-        this.studentRepository.save(student);
+    public String createStudent(Student student) {
+        String result = "";
+        try {
+
+            this.studentRepository.save(student);
+            result = "Student added successfully!";
+        } catch(DataIntegrityViolationException ex) {
+            result = "Email already taken";
+        }
+
+
+
+        return result;
     }
 
     public void deleteStudents() {

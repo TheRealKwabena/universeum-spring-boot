@@ -11,7 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const NavBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{backgroundColor: "#252626"}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -22,12 +22,17 @@ const NavBar = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" id='logo' component="div" sx={{ flexGrow: 1 }}>
             Universeum
           </Typography>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Login</Button>
+          <a href='\' id='link'>
+            <Button color="inherit"><p>Home</p></Button>
+            </a>
+            <a href='\' id='link'>
+            <Button color="inherit"><p>Login</p></Button>
+            </a>
+            
+          
         </Toolbar>
       </AppBar>
     </Box>
