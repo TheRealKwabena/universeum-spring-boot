@@ -4,6 +4,7 @@ import com.example.university.model.Teacher;
 import com.example.university.repositories.TeacherRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +31,16 @@ public class TeacherService {
         this.teacherRepository.deleteAll();
     }
 
-    public Teacher createTeacher(Teacher teacher) {
-        return this.teacherRepository.save(teacher);
+    public String createTeacher(Teacher teacher) {
+        String response = "";
+        try{
+            this.teacherRepository.save(teacher);
+            response = "Teacher added successfully";
+
+        } catch(DataIntegrityViolationException ex) {
+            response = "Email already taken";
+        }
+        return response;
+
     }
 }

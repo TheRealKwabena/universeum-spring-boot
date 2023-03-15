@@ -53,7 +53,13 @@ public class TeacherController {
     }
     @PostMapping("/teachers")
     ResponseEntity<?> createTeacher(@RequestBody Teacher teacher) {
-        Teacher addedTeacher = this.teacherService.createTeacher(teacher);
-        return new ResponseEntity<>(addedTeacher, HttpStatus.CREATED);
+        String result = this.teacherService.createTeacher(teacher);
+        if(result.equals("Email already taken")) {
+            return ResponseEntity.status(HttpStatus.OK).body(result);
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.CREATED).body(teacher);
+        }
+
     }
 }
