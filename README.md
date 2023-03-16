@@ -1,4 +1,4 @@
-# spring-boot-university
+# universeum-spring-boot
 Models a university with provided functionalities of the domain with entities Student, Course and Teacher
 
 
