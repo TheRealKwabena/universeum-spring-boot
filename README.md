@@ -18,17 +18,26 @@ Software Architecture used: Client-Server Architecture
 
 ## Frontend
 
-### Greeting screen
+### Greeting Screen
+![First SignUp Page](assets/frontpage.png)
 
 
 
 
 
-###
+### Register Student Page
+
+![Register Page](assets/register.png)
+
+### Course List
+![Register Page](assets/list.png)
+
+## Backend.
+
+This is the structure of the files in the backend.
+
+The plan is to have separation of concerns so each file is grouped into packages
+
+![Structure Page](assets/file-structure.png)
 
 
-
-- Get all Students
-
-
-- Get all students taking a course
