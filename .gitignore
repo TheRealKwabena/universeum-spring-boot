@@ -29,5 +29,9 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### Node Module Directories ###
+src/main/backendwithjs/node_modules
+src/main/frontend/node_modules
+
 ### VS Code ###
 .vscode/
